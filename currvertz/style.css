@@ -1,97 +1,317 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  color: hsl(200, 100%, 10%);
+  font-family: sans-serif;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.header{
+  align-items: center;
+  background-color: #0A146D;
+  height: 26rem;
+  color: white;
   text-align: center;
+  padding: 10rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.upper{
+  font-size: 30px;
+  font-family: sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 39px;
 }
 
-.card {
-  padding: 2em;
+.info{
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 27px;
 }
 
-.read-the-docs {
-  color: #888;
+label{
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #434341;
+  line-height: 24px;
 }
 
-button {
+.card{
+  background-color: white;
+  padding: 50px 5px 20px 5px;
+  width: 80%;
+  min-height: 215px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2%;
+  border: 2 solid white;
+  transform: translateY(-13rem);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.amount-slot{
+  display: flex;
+  width: 100%;
+  padding: 3px;
+  margin: 3px 0;
+  box-sizing: border-box;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border: 2px solid black;
+  justify-content: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+
+#logo{
+  width: 20px;
+  border-radius: 8px;
+  align-items: center;
+  padding: 10px;
+  display: flex;
+}
+
+.amount{
+  width: 100%;
+  padding: 5px;
+  margin: 3px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 2px solid white;
+  outline: none;
+  color: #000000;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.currency-input{
+  background-color: #ffffff;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+input{
+  width: 100%;
+  padding: 15px 20px;
+  margin: 3px 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.currIcon{
+  width: 30px;
+  border-radius: 8px;
+  margin-right: 5px;
+}
+
+
+.input{
+  position: relative;
+  width: 90%;
+  margin: 8px;
+}
+
+
+
+.formVal{
+  width: 100%;
+  padding: 7px 10px 5px 8px;
+  margin: 3px 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+
+.formCurr{
+  display: flex;
+  align-items: center;
+}
+
+.currList{
+  border-radius: 8px;
+  background-color: white;
+  position: absolute;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
+  margin-top: 5px;
+  
+}
+
+
+.currItems{
+  padding: 10px;
+  margin: 0;
+}
+
+
+.mark-icon{
+  font-size: 20px;
+}
+
+
+
+
+.list-value{
+  display: flex;
+  margin-bottom: 5px;
+  font-family: sans-serif;
+
+}
+
+.list-value:hover{
+  background-color: aquamarine;
+  border-radius: 8px;
+  cursor: pointer;
+
+}
+
+.currName{
+  color: #9BA1AE;
+ 
+}
+
+.currCode{
+ color: #141E37;
+ margin-right: 4px;
+}
+
+.from-currencyTemp{
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+
+.to-currency{
+  display: flex;
+  align-items: center;
+}
+
+  .arrow{
+  border-radius: 50%;
+  border: 0.5px solid black;
+  margin: 0 20px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  min-width: 40px;
+  cursor: pointer;
+}
+
+.rates{
+  z-index: -10;
+}
+
+.amountCurr{
+  display: flex;
+  color: #5c667b;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 27px;
+}
+
+
+.exchange{
+  font-size: 20px;
+  font-weight: 100px;
+  display: flex;
+  color: #2E3C57;
+  font-size: 30px;
+  font-family: sans-serif;
+  font-weight: 600;
+  line-height: 51px;
+}
+
+.cov{
+  color: #5C667B;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.send{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  align-items: center;
+}
+
+.note{
+  text-align: center;
+  padding: 5px;
+  background-color: #F2F7FE;
+  border-radius: 5px;
+  color: #959EAD;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.convert{
+  background-color: rgb(0, 113, 235);
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: sans-serif;
+  margin-top: 15px;
+  border: none;
+  padding: 15px 20px;
+}
+
+.convert:hover{
+  cursor: pointer;
+  background-color: rgb(38, 151, 255);
+}
+
+
+
+.hidden{
+  display: none;
+}
+
+
+@media screen and (max-width: 850px) {
+
+  .card{
+    padding-left: 18px;
   }
-  a:hover {
-    color: #747bff;
+  .currency-input{
+    display: flex;
+    flex-direction: column;
   }
-  button {
-    background-color: #f9f9f9;
+  .send{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: inherit;
+  }
+
+  .currList{
+    z-index: 200;
+  }
+
+  .note{
+    margin: 10px;
   }
 }

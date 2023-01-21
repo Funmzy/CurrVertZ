@@ -3,11 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>CurrVertZ</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header class="header">
+      <div class="upper title">CvZ Currency Converter</div>
+      <div class="info title">Check live foreign currency exchange rates</div>
+    </header>
+    <div class="card">
+      <div class="currency-input">
+        <div class="input">
+          <form action="#">
+            <label for="amount">Amount</label>
+            <div class="amount-slot">
+              <i aria-hidden="true" id="logo"></i>
+              <!-- <img src="/icon/nairaLogo.png" alt="" class="logo"> -->
+              <input type="number" class="amount"/>
+            </div>
+          </form>
+        </div>
+        <div class="from input">
+          <label for="from">From</label>
+          <div class="from-input hidden">
+            <input type="text" placeholder="Type to search...">
+          </div>
+          <div class="form-valueA formVal">
+            <div class="from-currency formCurr">
+              <img src="/icon/usa-circular.png" alt="" class="currency-iconA currIcon">
+              <div class="from-A currCode">USD -</div>&nbsp;
+              <div class="from-B currName">US Dollar</div>
+            </div>
+            <div class="mark-icon"><i class="fa fa-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="listA hidden currList">
+            <ul class="currencyListA currItems">
+            </ul>
+          </div>
+        </div>
+        <button class="arrow"><span><i class="fa fa-exchange" aria-hidden="true"></i></span>
+          <!-- <button class="arrow-switch" type="button"><img src="icon/sample.svg" alt=""></button> -->
+        </button>
+        <div class="to input">
+          <label for="to">To</label>
+          <div class="to-input hidden">
+            <input type="text" placeholder="Type to search...">
+          </div>
+          <div class="form-valueB formVal">
+            <div class="to-currency formCurr">
+              <img src="/icon/nigeria-circular.png" alt="" class="currency-iconB currIcon">
+              <div class="to-A currCode">NG -</div>&nbsp;
+              <div class="to-B currName">NGN-Naira</div>
+            </div>
+            <div class="mark-icon"><i class="fa fa-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="listB hidden currList">
+            <ul class="currencyListB currItems">
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="rates input hidden">
+        <div>
+          <div class="amountCurr">
+            <div class="amount-rep">500.00</div>&nbsp;
+            <div class="rate-currency">US Dollars</div>
+          </div>
+          <div class="exchange">
+            <div class="exchange-rate">461.55761</div>&nbsp;
+            <div class="exchange-code">Euros</div>
+          </div>
+        </div>
+        <div class="cov">
+          <p class="from-values">1 <span class="from-value">USD =</span><span class="from-rate"></span><span class="from-code">EUR</span></p>
+          <p class="to-values"> <span class="to-value"></span></p>
+        </div>
+      </div>
+      <div class="send">
+        <div class="note">We use the mid-market rate for our Converter.</div>
+        <button class="convert">Convert</button>
+      </div>
+    </div>
+    <section class="below">
+    </section>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
+
+
+
+
