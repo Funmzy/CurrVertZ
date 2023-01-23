@@ -81,13 +81,13 @@ let currencyB=''
 
 currencyList.forEach((curr) =>{
     currencyListHtmlA += `
-        <div class="list-value ${curr.code}" data-img=${curr.img} data-name=${curr.name} data-logo=${curr.logo} id="${curr.code}">
+        <div class="list-value ${curr.code} A" data-img=${curr.img} data-name=${curr.name} data-logo=${curr.logo} id="${curr.code}">
             <img src="/icon/${curr.img}.png" alt="" class="currency-iconA currIcon">
             <div class="from-currencyTemp"><span class="currCode">${curr.code} - </span><span class="currName">${curr.name}</span></div>
         </div>`
     
     currencyListHtmlB += `
-    <div class="list-value ${curr.code}" data-img=${curr.img} data-name=${curr.name} id="${curr.code}">
+    <div class="list-value ${curr.code} B" data-img=${curr.img} data-name=${curr.name} id="${curr.code}">
         <img src="/icon/${curr.img}.png" alt="" class="currency-iconB currIcon">
         <div class="from-currencyTemp"><span class="currCode">${curr.code} - </span><span class="currName">${curr.name}</span></div>
     </div>`
@@ -143,7 +143,7 @@ listB.addEventListener('click', function(event){
 })
 
 
-
+// Conversion feature
 
 document.querySelector('.convert').addEventListener('click', function(){
     const amount = Number(document.querySelector('.amount').value);
@@ -183,16 +183,16 @@ document.querySelector('.convert').addEventListener('click', function(){
 })
 
 
+// Switch button feature
 
 document.querySelector('.arrow').addEventListener('click', function(){
-    console.log('Its working')
     const currIconA = document.querySelector('.currency-iconA')
     const currCodeA = document.querySelector('.from-A')
     const currNameA = document.querySelector('.from-B')
     const fromSrc = currIconA.src
     const fromCode = currCodeA.textContent
     const fromName = currNameA.textContent
-    console.log(fromSrc, fromCode, fromName)
+   
 
     const currIconB = document.querySelector('.currency-iconB')
     const currCodeB = document.querySelector('.to-A')
@@ -200,7 +200,7 @@ document.querySelector('.arrow').addEventListener('click', function(){
     const toSrc = currIconB.src
     const toCode = currCodeB.textContent
     const toName = currNameB.textContent
-    console.log({toSrc, toCode, toName})
+   
 
     currIconA.src = toSrc
     currCodeA.textContent = toCode
@@ -212,7 +212,7 @@ document.querySelector('.arrow').addEventListener('click', function(){
 
 
     const val = currencyList.find(curr =>{
-        console.log(curr.name, toName)
+       
 
        return curr.name === toName.trim()
     })
@@ -221,13 +221,44 @@ document.querySelector('.arrow').addEventListener('click', function(){
     const logoEl = document.querySelector('#logo')
     logoEl.className=''
     logo.forEach((item)=>{
-            console.log(item)
+           
             logoEl.classList.add(item)
             
         })
-    console.log(val)
 
 })
+
+// Search feature
+
+const searchItem = (el, val) =>{
+    const searchInput = el.value.toUpperCase();
+    const listItems = document.querySelectorAll(`.${val}`);
+    listItems.forEach((item)=> {
+        let text = item.textContent;
+        if(text.toUpperCase().includes(searchInput.toUpperCase())){
+            item.style.display = '';
+        }
+        else {
+            item.style.display = 'none';
+        }
+    })
+}
+
+const inputA = document.querySelector('.myInputA')
+const inputB = document.querySelector('.myInputB')
+
+inputA.addEventListener('input', filterListA);
+inputB.addEventListener('input', filterListB);
+
+function filterListA(){
+
+   searchItem(inputA, 'A')   
+}
+
+function filterListB(){
+
+    searchItem(inputB, 'B')   
+ }
 
 
 
